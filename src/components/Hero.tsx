@@ -3,14 +3,10 @@ import React from 'react';
 
 const Hero = () => {
     return (
-      <div className="relative bg-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            className="w-full h-full object-top object-contain lg:object-cover"
-            src="/test.png"
-            alt="Fans at a football match"
-          />
-          <div className="absolute inset-0 bg-black opacity-75"></div>
+      <div className="relative bg-white overflow-hidden pt-16">
+        <div className=" md:h-40"></div>
+        <div className="absolute inset-0 bg-fixed lg:bg-cover bg-center bg-top" style={{ backgroundImage: 'url("/test.png")', paddingTop: '40px' }}>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-black opacity-75"></div>
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
