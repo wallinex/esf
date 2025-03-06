@@ -10,7 +10,7 @@ const Hero = () => {
             src="/test.png"
             alt="Fans at a football match"
           />
-          <div className="absolute inset-0 bg-blue-600 opacity-75"></div>
+          <div className="absolute inset-0 bg-black opacity-75"></div>
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">

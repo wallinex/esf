@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -9,4 +10,12 @@ html {
 
 body {
   @apply bg-white text-gray-900;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+@font-face {
+  font-family: 'title';
+  src: url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap') format('opentype');
+  font-weight: 300;
+  font-style: normal;
 }

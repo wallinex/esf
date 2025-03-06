@@ -11,7 +11,11 @@ const Header = () => {
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           {/* Logo */}
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#" className="flex items-center text-2xl font-bold text-blue-600">
+            <a
+              href="#"
+              className="flex items-center font-logo text-2xl text-black hover:text-gray-900"
+           
+            >
               <img src="/logo192.png" alt="Elite Sports Finance Logo" className="h-8 w-8 mr-2" />
               Elite Sports Finance
             </a>
@@ -53,7 +57,7 @@ const Header = () => {
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <a
               href="mailto:partners@elitesportsfinance.com?subject=Partner%20Interest&body=Hi%2C%0A%0AWe%20are%20interested%20in%20partnering%20to%20improve%20our%20fan%20experience%20and%20increase%20our%20revenues.%0A%0AWe%20are%20a%20club%20with%20these%20many%20fans%3A%0A%0AWe%20are%20located%20in%3A%0A%0AWe%20would%20like%20to%20get%20started%3A%0A%0AThank%20you%21"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-black hover:bg-gray-900"
             >
               Contact Us
             </a>

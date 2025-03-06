@@ -43,7 +43,7 @@ const HowItWorks = () => {
               {steps.map((step, index) => (
                 <div key={step.number} className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-black text-white">
                       <span className="text-lg font-bold">{step.number}</span>
                     </div>
                   </div>
