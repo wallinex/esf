@@ -13,10 +13,10 @@ const Header = () => {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a
               href="#"
-              className="flex items-center font-logo text-2xl text-black hover:text-gray-900"
+              className="flex items-center font-logo text-lg lg:text-2xl text-black hover:text-gray-900"
            
             >
-              <img src="/logo192.png" alt="Elite Sports Finance Logo" className="h-8 w-8 mr-2" />
+              <img src="/logo512.png" alt="Elite Sports Finance Logo" className="h-8 w-8 mr-2" />
               Elite Sports Finance
             </a>
           </div>

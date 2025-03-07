@@ -10,7 +10,7 @@ import CTA from '../components/CTA';
 
 const Home = () => {
   return (
-    <div className="dark bg-black">
+    <div className="dark bg-white">
       <MainLayout>
         <Hero />
         <Features />
