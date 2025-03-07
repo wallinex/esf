@@ -7,14 +7,14 @@ const Hero = () => {
     return (
       <div className="relative bg-white overflow-hidden pt-16">
       
-        <div className=" md:h-40"></div>
+        <div className=" md:h-20"></div>
        
         <div className="hidden bg-black w-8 lg:h-8"></div>
         <div className="absolute inset-0 bg-fixed lg:bg-cover bg-center bg-top" style={{ backgroundImage: 'url("/test.png")', paddingTop: '40px' }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-black opacity-75"></div>
         </div>
        {/* Animated card */}
-       <div className='absolute right-0 top-1/2 transform -translate-y-1/2 animate-slideInRight md:animate-slideUp'
+       <div className='absolute right-0 top-64 transform -translate-y-1/2 animate-slideInRight md:animate-slideUp'
        style={{
            right: 'calc(15% - 24px)'
        }}>
@@ -38,13 +38,13 @@ const Hero = () => {
         </div>
         {/* Animated columns */}
         <div
-          className="absolute right-0 top-3/4 transform -translate-y-1/2 animate-slideInRight"
+          className="absolute right-0 bottom-0 transform -translate-y-1/2 animate-slideInRight"
           style={{
             right: 'calc(15% - 24px)' // Adjust this value to align with the SVG
           }}
         >
           <AnimatedColumns />
-          <Tooltip text="Real Time Analytics" position={{ top: 40, left: -50 }} delay={900} className="scale-in"  />
+          <Tooltip text="Real Time Analytics" position={{ top: -10, left: -50 }} delay={900} className="scale-in"  />
           <Tooltip text="Improved ROI" position={{ bottom: 40, right: -50 }} delay={1300} className="scale-in"  />
         </div>
         <div className="relative max-w-7xl mx-auto">
