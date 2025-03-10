@@ -92,11 +92,13 @@ const Hero = () => {
               <div className="sm:text-center lg:text-left">
                 <div className="hidden lg:block lg:h-8"></div>
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="pt-4 block xl:inline">Elite Sports Finance</span>{' '}
-                  <span className="block text-blue-600 xl:inline">for Premier Clubs</span>
+                Turning{' '}
+                    <span className="pt-4 block xl:inline text-blue-600">Fan Passion</span>{' '}
+                    into 
+                  <span className="block text-blue-600 xl:inline"> Financial Power</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  <span className="font-bold">Turning Fan Passion into Financial Power</span>
+                  <span className="font-bold">We help you unlock untapped revenues.</span>
                 </p>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   Transforming fan loyalty into financial opportunity through innovative white-label credit cards, loyalty programs, and affiliate revenue solutions for Europe's elite sports clubs.
