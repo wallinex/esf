@@ -1,122 +1,145 @@
-// components/Header.tsx
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react"; // Make sure Lucide icons are installed
 
-const Header = () => {
+export default function SignedOutHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // Completely isolated toggle function that stops any propagation
+  const toggleMenu = (e: React.MouseEvent) => {
+    // These prevent the event from bubbling up or triggering default behavior
+    e.preventDefault();
+    e.stopPropagation();
+    setIsMenuOpen(prev => !prev);
+  };
+  
+  // Function to close the menu without preventing navigation
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <header className="fixed w-full bg-white z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+    <header className="fixed top-0 left-0 right-0 w-full bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-800 z-50">
+      {/* Content container with max-width */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex justify-start lg:w-0 lg:flex-1">
+          <a href="/" className="flex items-center">
+            <img
+              src="/images/logo/logo.svg"
+              alt="Logo"
+              className="h-8 dark:hidden"
+            />
+            <img
+              src="/images/logo/logo-dark.svg"
+              alt="Logo"
+              className="hidden h-8 dark:block"
+            />
+          </a>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex space-x-6">
             <a
-              href="#"
-              className="flex items-center font-logo text-lg lg:text-2xl text-black hover:text-gray-900"
-           
+              href="/#features"
+              className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-600"
             >
-              <img src="/logo512.png" alt="Elite Sports Finance Logo" className="h-8 w-8 mr-2" />
-              Elite Sports Finance
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="-mr-2 -my-2 md:hidden">
-            <button
-              type="button"
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <span className="sr-only">Open menu</span>
-              {isMenuOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-
-          {/* Desktop navigation */}
-          <nav className="hidden md:flex space-x-10">
-            <a href="#features" className="text-base font-medium text-gray-500 hover:text-gray-900">
               Features
             </a>
-            <a href="#how-it-works" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              How It Works
+            <a
+              href="https://admin.elitesportfinance.com/forecast"
+              className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-600"
+            >
+              Forecast
             </a>
-            {/* <a href="#testimonials" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Testimonials
-            </a>
-            <a href="#pricing" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
-            </a> */}
           </nav>
 
-          {/* CTA button */}
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="mailto:partners@elitesportsfinance.com?subject=Partner%20Interest&body=Hi%2C%0A%0AWe%20are%20interested%20in%20partnering%20to%20improve%20our%20fan%20experience%20and%20increase%20our%20revenues.%0A%0AWe%20are%20a%20club%20with%20these%20many%20fans%3A%0A%0AWe%20are%20located%20in%3A%0A%0AWe%20would%20like%20to%20get%20started%3A%0A%0AThank%20you%21"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-black hover:bg-gray-900"
+              href="https://admin.elitesportfinance.com/Signin"
+              className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-600"
             >
-              Contact Us
+              Sign In
+            </a>
+            <a
+              href="https://admin.elitesportfinance.com/contact-us"
+              className="px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white"
+            >
+              Request Access
+            </a>
+          </div>
+
+          {/* Mobile Menu Button - Isolated version with explicit button type */}
+          <button
+            type="button" 
+            onClick={toggleMenu}
+            className="relative z-50 p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:text-gray-400 dark:hover:text-gray-200 dark:hover:bg-gray-800 lg:hidden isolate"
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
+            {isMenuOpen ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu - Slides from top */}
+      <div 
+        className={`fixed inset-x-0 z-40 bg-white dark:bg-gray-900 shadow-lg transform transition-all duration-300 ease-in-out lg:hidden ${
+          isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+        }`}
+        style={{ top: '64px' }} // Adjust based on header height
+      >
+        <div className="px-4 py-6">
+          {/* Mobile Navigation Links */}
+          <nav className="grid gap-y-6 mb-6">
+            <a
+              href="/#features"
+              className="text-gray-700 hover:text-blue-600 text-lg font-medium dark:text-gray-300 dark:hover:text-blue-600"
+              onClick={closeMenu} // Only close menu, allow default navigation
+            >
+              Features
+            </a>
+            <a
+              href="https://admin.elitesportfinance.com/forecast"
+              className="text-gray-700 hover:text-blue-600 text-lg font-medium dark:text-gray-300 dark:hover:text-blue-600"
+              onClick={closeMenu} // Only close menu, allow default navigation
+            >
+              Forecast
+            </a>
+          </nav>
+
+          {/* Mobile Actions */}
+          <div className="flex flex-col space-y-4">
+            <a
+              href="https://admin.elitesportfinance.com/Signin"
+              className="block w-full text-center text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-600 py-2"
+              onClick={closeMenu} // Only close menu, allow default navigation
+            >
+              Sign In
+            </a>
+            <a
+              href="https://admin.elitesportfinance.com/contact-us"
+              className="block w-full text-center px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white"
+              onClick={closeMenu} // Only close menu, allow default navigation
+            >
+              Request Access
             </a>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Backdrop overlay - only shows when menu is open */}
       {isMenuOpen && (
-        <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5">
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="text-2xl font-bold text-blue-600">Elite Sports Finance</span>
-                </div>
-                <div className="-mr-2">
-                  <button
-                    type="button"
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className="sr-only">Close menu</span>
-                    <X className="h-6 w-6" aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
-              <div className="mt-6">
-                <nav className="grid gap-y-8">
-                  <a href="#features" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Features
-                  </a>
-                  <a href="#how-it-works" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    How It Works
-                  </a>
-                  <a href="#testimonials" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Testimonials
-                  </a>
-                  <a href="#pricing" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Pricing
-                  </a>
-                </nav>
-              </div>
-            </div>
-            <div className="py-6 px-5 space-y-6">
-              <div>
-                <a
-                  href="mailto:partners@elitesportsfinance.com?subject=Partner%20Interest&body=Hi%2C%0A%0AWe%20are%20interested%20in%20partnering%20to%20improve%20our%20fan%20experience%20and%20increase%20our%20revenues.%0A%0AWe%20are%20a%20club%20with%20these%20many%20fans%3A%0A%0AWe%20are%20located%20in%3A%0A%0AWe%20would%20like%20to%20get%20started%3A%0A%0AThank%20you%21"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
-                >
-                  Contact Us
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div 
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 z-30 lg:hidden" 
+          style={{ top: '64px' }}
+          onClick={toggleMenu}
+        />
       )}
     </header>
   );
-};
-
-export default Header;
+}
