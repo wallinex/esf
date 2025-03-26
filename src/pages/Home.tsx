@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import HowItWorks from '../components/HowItWorks';
 import Testimonials from '../components/Testimonials';
-import Pricing from '../components/Pricing';
+import Product from '../components/Product';
 import CTA from '../components/CTA';
 
 const Home = () => {
@@ -14,9 +14,10 @@ const Home = () => {
       <MainLayout>
         <Hero />
         <Features />
+        <Product /> 
         <HowItWorks />
         {/* <Testimonials /> */}
-        {/* <Pricing /> */}
+     
         <CTA />
       </MainLayout>
     </div>

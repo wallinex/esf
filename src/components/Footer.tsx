@@ -25,8 +25,8 @@ const Footer = () => {
                 href="#"
                 className="flex items-center font-logo text-2xl text-white hover:text-gray-200"
               >
-                <img src="/esf-icon-white.png" alt="Elite Sports Finance Logo" className="h-8 w-8 mr-2" />
-                Elite Sports Finance
+                <img src="/esf-icon-white.png" alt="Elite Sport Finance Logo" className="h-8 w-8 mr-2" />
+                Elite Sport Finance
               </a>
             </div>
             <p className="text-gray-400 text-base">
@@ -77,7 +77,7 @@ const Footer = () => {
                     </a>
                   </li> */}
                   <li>
-                    <a href="mailto:contact@elitesportsfinance.com?subject=Contact%20Us" className="text-base text-gray-300 hover:text-white">
+                    <a href="https://admin.elitesportfinance.com/contact-us" className="text-base text-gray-300 hover:text-white">
                       Contact Us
                     </a>
                   </li>
@@ -99,7 +99,7 @@ const Footer = () => {
                     </a>
                   </li> */}
                   <li>
-                      <a href="mailto:careers@elitesportsfinance.com?subject=Career%20Opportunities&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20joining%20your%20team,%20%0D%0A%0D%0AHere%20is%20my%20LinkedIn%20profile:%20" className="text-base text-gray-300 hover:text-white">
+                      <a href="https://admin.elitesportfinance.com/contact-us" className="text-base text-gray-300 hover:text-white">
                           Careers
                       </a>
                   </li>
@@ -130,10 +130,10 @@ const Footer = () => {
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; 2025 Elite Sports Finance AB. All rights reserved.
+            &copy; 2025 Elite Sport Finance AB. All rights reserved.
           </p>
           <p className="text-sm text-gray-400 xl:text-center mt-4">
-            Elite Sports Finance AB is a technology provider. All banking services are provided by our banking partners.
+            Elite Sport Finance AB is a technology provider. All banking services are provided by our banking partners.
           </p>
         </div>
       </div>

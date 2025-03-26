@@ -5,7 +5,7 @@ const HowItWorks = () => {
     const steps = [
       {
         number: "01",
-        title: "Partner with Elite Sports Finance",
+        title: "Partner with Elite Sport Finance",
         description: "We'll work closely with your club to understand your unique needs and fan base to develop a tailored financial solution."
       },
       {
@@ -26,7 +26,7 @@ const HowItWorks = () => {
     ];
   
     return (
-      <div id="how-it-works" className="py-12 bg-white">
+      <div id="how-it-works" className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">How It Works</h2>
@@ -39,6 +39,9 @@ const HowItWorks = () => {
           </div>
   
           <div className="mt-10 lg:flex lg:items-center lg:justify-between">
+            <div className="mt-8 lg:mt-0 lg:w-1/2 lg:pr-8 mb-8 lg:mb-0">
+              <img src="/esf-admin-macbook.png" alt="Card" className="w-full h-auto rounded-lg" />
+            </div>
             <div className="space-y-8 lg:w-1/2">
               {steps.map((step, index) => (
                 <div key={step.number} className="flex">
@@ -54,9 +57,7 @@ const HowItWorks = () => {
                 </div>
               ))}
             </div>
-            <div className="mt-8 lg:mt-0 lg:w-1/2 lg:pl-8">
-              <img src="/card-info.png" alt="Card" className="w-full h-auto shadow-lg rounded-lg" />
-            </div>
+            
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import React from 'react';
 const Testimonials = () => {
     const testimonials = [
       {
-        quote: "Since implementing Elite Sports Finance's white-label credit card program, we've seen a 30% increase in revenue and unprecedented levels of fan engagement.",
+        quote: "Since implementing Elite Sport Finance's white-label credit card program, we've seen a 30% increase in revenue and unprecedented levels of fan engagement.",
         author: "Financial Director",
         club: "Premier League Club, UK"
       },
@@ -14,7 +14,7 @@ const Testimonials = () => {
         club: "La Liga Club, Spain"
       },
       {
-        quote: "Working with Elite Sports Finance has been seamless. Their expertise in both sports and financial sectors makes them the perfect partner.",
+        quote: "Working with Elite Sport Finance has been seamless. Their expertise in both sports and financial sectors makes them the perfect partner.",
         author: "Commercial Director",
         club: "Bundesliga Club, Germany"
       }
@@ -29,7 +29,7 @@ const Testimonials = () => {
               Trusted by Elite Clubs Across Europe
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Hear what our partners have to say about their experience with Elite Sports Finance.
+              Hear what our partners have to say about their experience with Elite Sport Finance.
             </p>
           </div>
   
